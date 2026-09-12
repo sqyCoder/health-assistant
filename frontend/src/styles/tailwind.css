@@ -1,0 +1,30 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@import "../design/tokens.css";
+@import "../design/typography.css";
+@import "./utilities.css";
+
+@theme {
+  --color-primary: var(--ac-primary);
+  --color-primary-deep: var(--ac-primary-deep);
+  --color-violet: var(--ac-violet);
+  --color-cyan: var(--ac-cyan);
+  --color-mint: var(--ac-mint);
+  --color-amber: var(--ac-amber);
+  --color-coral: var(--ac-coral);
+  --color-t1: var(--ac-text-1);
+  --color-t2: var(--ac-text-2);
+  --color-t3: var(--ac-text-3);
+  --color-surface: var(--ac-surface);
+  --color-surface-solid: var(--ac-surface-solid);
+  --color-sunken: var(--ac-surface-sunken);
+  --color-line: var(--ac-border);
+  --color-line-strong: var(--ac-border-strong);
+  --radius-card: 20px;
+  --radius-btn: 12px;
+  --font-sans: var(--ac-font-family);
+  --font-mono: var(--ac-font-mono);
+}

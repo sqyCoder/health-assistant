@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#070b14" />
+    <title>智能健康助手</title>
+    <script>
+      (function () {
+        try {
+          var mode = localStorage.getItem('ha_theme_mode')
+          if (!mode) {
+            var legacy = localStorage.getItem('ha_theme')
+            mode = legacy === 'dark' ? 'dark' : legacy === 'light' ? 'light' : 'system'
+          }
+          var dark =
+            mode === 'dark' ||
+            (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

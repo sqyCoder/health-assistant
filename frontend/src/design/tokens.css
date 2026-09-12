@@ -1,0 +1,92 @@
+:root {
+  --ac-primary: #4f7cff;
+  --ac-primary-deep: #365df0;
+  --ac-violet: #7c5cff;
+  --ac-cyan: #22d3ee;
+  --ac-mint: #14c9a3;
+  --ac-amber: #f5a524;
+  --ac-coral: #ff5c7a;
+
+  --ac-bg-base: #f6f8fc;
+  --ac-bg-mesh-1: rgba(79, 124, 255, 0.1);
+  --ac-bg-mesh-2: rgba(124, 92, 255, 0.08);
+  --ac-bg-mesh-3: rgba(34, 211, 238, 0.08);
+  --ac-surface: rgba(255, 255, 255, 0.86);
+  --ac-surface-solid: #ffffff;
+  --ac-surface-sunken: #edf1f8;
+  --ac-overlay: rgba(15, 23, 42, 0.4);
+
+  --ac-border: rgba(15, 23, 42, 0.1);
+  --ac-border-strong: rgba(15, 23, 42, 0.18);
+
+  --ac-text-1: #0f172a;
+  --ac-text-2: #475569;
+  --ac-text-3: #94a3b8;
+
+  --ac-success-bg: rgba(20, 201, 163, 0.12);
+  --ac-warning-bg: rgba(245, 165, 36, 0.14);
+  --ac-danger-bg: rgba(255, 92, 122, 0.12);
+
+  --ac-gradient-primary: linear-gradient(135deg, #4f7cff 0%, #7c5cff 52%, #22d3ee 130%);
+  --ac-gradient-primary-hover: linear-gradient(135deg, #6c8cff 0%, #8b6cff 52%, #3ee0f5 130%);
+  --ac-gradient-health: linear-gradient(135deg, #14c9a3, #22d3ee);
+  --ac-gradient-danger: linear-gradient(135deg, #ff5c7a, #f5a524);
+  --ac-gradient-aurora:
+    radial-gradient(60% 80% at 15% 10%, var(--ac-bg-mesh-1), transparent 60%),
+    radial-gradient(50% 70% at 85% 15%, var(--ac-bg-mesh-2), transparent 62%),
+    radial-gradient(70% 90% at 50% 100%, var(--ac-bg-mesh-3), transparent 60%);
+  --ac-gradient-text: linear-gradient(100deg, #1e293b 0%, #3b5bdb 45%, #0e7490 100%);
+  --ac-gradient-shimmer: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.4) 50%, transparent 80%);
+
+  --ac-shadow-1: 0 1px 2px rgba(7, 11, 20, 0.06);
+  --ac-shadow-2: 0 8px 24px -8px rgba(7, 11, 20, 0.18);
+  --ac-shadow-3: 0 24px 48px -24px rgba(7, 11, 20, 0.32);
+  --ac-shadow-glow: 0 0 0 1px rgba(79, 124, 255, 0.3), 0 12px 40px -12px rgba(79, 124, 255, 0.45);
+
+  --ac-font-family: "Inter Variable", "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --ac-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+html.dark {
+  --ac-primary: #6c8cff;
+  --ac-primary-deep: #4f7cff;
+  --ac-violet: #9b7cff;
+  --ac-cyan: #3ee0f5;
+  --ac-mint: #2dd4a7;
+  --ac-amber: #ffb84d;
+  --ac-coral: #ff6e8a;
+
+  --ac-bg-base: #070b14;
+  --ac-bg-mesh-1: rgba(108, 140, 255, 0.16);
+  --ac-bg-mesh-2: rgba(155, 124, 255, 0.14);
+  --ac-bg-mesh-3: rgba(62, 224, 245, 0.1);
+  --ac-surface: rgba(17, 24, 39, 0.72);
+  --ac-surface-solid: #111827;
+  --ac-surface-sunken: #0b1120;
+  --ac-overlay: rgba(2, 6, 16, 0.62);
+
+  --ac-border: rgba(148, 163, 184, 0.16);
+  --ac-border-strong: rgba(148, 163, 184, 0.28);
+
+  --ac-text-1: #e8eef9;
+  --ac-text-2: #9aa7bd;
+  --ac-text-3: #5b6b85;
+
+  --ac-success-bg: rgba(45, 212, 167, 0.14);
+  --ac-warning-bg: rgba(255, 184, 77, 0.16);
+  --ac-danger-bg: rgba(255, 110, 138, 0.15);
+
+  --ac-gradient-text: linear-gradient(100deg, #e8eef9 0%, #9bb8ff 45%, #7ce7f7 100%);
+  --ac-gradient-shimmer: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.18) 50%, transparent 80%);
+
+  --ac-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ac-shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+  --ac-shadow-3: 0 24px 48px -24px rgba(0, 0, 0, 0.8);
+  --ac-shadow-glow: 0 0 0 1px rgba(108, 140, 255, 0.4), 0 12px 40px -12px rgba(108, 140, 255, 0.5);
+}
+
+body.ac-lite {
+  --ac-surface: var(--ac-surface-solid);
+  --ac-shadow-2: var(--ac-shadow-1);
+  --ac-shadow-3: var(--ac-shadow-2);
+}

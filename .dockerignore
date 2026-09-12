@@ -1,0 +1,15 @@
+target/
+.idea/
+.git/
+.gitignore
+.env
+.env.example
+specplan.md
+README.md
+data/
+logs/
+fonts/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.log

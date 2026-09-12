@@ -1,0 +1,35 @@
+services:
+  backend:
+    build: .
+    container_name: health-backend
+    env_file: .env
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=prod
+      - EXPORT_FONT_PATH=/app/fonts/simhei.ttf
+    volumes:
+      - ./fonts:/app/fonts:ro
+    restart: unless-stopped
+    networks:
+      - health-net
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/8080' || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  frontend:
+    build: ./frontend
+    container_name: health-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - health-net
+
+networks:
+  health-net:
+    driver: bridge

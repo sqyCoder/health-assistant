@@ -1,0 +1,208 @@
+/* ============ 基础盒模型（替代 preflight 的关键部分） ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  box-sizing: border-box;
+}
+
+/* ============ 玻璃 ============ */
+.ac-glass {
+  background: var(--ac-surface);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--ac-border);
+  box-shadow: var(--ac-shadow-2);
+}
+
+body.ac-lite .ac-glass {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.ac-glass-hover {
+  transition: border-color 0.24s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.24s cubic-bezier(0.2, 0, 0, 1),
+    transform 0.24s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.ac-glass-hover:hover {
+  border-color: var(--ac-border-strong);
+  box-shadow: var(--ac-shadow-3);
+}
+
+/* ============ 光标光斑 ============ */
+.ac-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.ac-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(108, 140, 255, 0.14),
+    transparent 65%
+  );
+}
+
+.ac-spotlight:hover::before {
+  opacity: 1;
+}
+
+body.ac-lite .ac-spotlight::before {
+  display: none;
+}
+
+/* ============ 渐变 ============ */
+.ac-bg-primary {
+  background-image: var(--ac-gradient-primary);
+}
+
+.ac-border-gradient {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--ac-surface-solid), var(--ac-surface-solid)) padding-box,
+    var(--ac-gradient-primary) border-box;
+}
+
+/* ============ 页面转场 ============ */
+.ac-page-enter-active {
+  transition: opacity 0.36s cubic-bezier(0.05, 0.7, 0.1, 1), transform 0.36s cubic-bezier(0.05, 0.7, 0.1, 1),
+    filter 0.36s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+.ac-page-leave-active {
+  transition: opacity 0.24s cubic-bezier(0.2, 0, 0, 1), transform 0.24s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.ac-page-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(6px);
+}
+
+.ac-page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+body.ac-lite .ac-page-enter-from,
+body.ac-lite .ac-page-leave-to {
+  transform: none;
+  filter: none;
+}
+
+/* ============ View Transition 主题揭示 ============ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html.ac-theme-transition::view-transition-old(root) {
+  z-index: 1;
+}
+
+html.ac-theme-transition::view-transition-new(root) {
+  z-index: 2;
+}
+
+/* ============ 滚动条 ============ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ac-border-strong) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--ac-border-strong);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ac-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.ac-no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* ============ 入场编排 ============ */
+.ac-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.ac-reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s cubic-bezier(0.05, 0.7, 0.1, 1), transform 0.4s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+body.ac-lite .ac-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============ 骨架微光 ============ */
+.ac-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: var(--ac-surface-sunken);
+}
+
+.ac-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ac-gradient-shimmer);
+  transform: translateX(-100%);
+  animation: ac-shimmer 1.4s infinite;
+}
+
+@keyframes ac-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+body.ac-lite .ac-shimmer::after {
+  animation: none;
+}
+
+/* ============ 键盘焦点 ============ */
+:focus-visible {
+  outline: 2px solid var(--ac-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ============ 基础滚动区 ============ */
+.ac-scroll {
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+html,
+body {
+  background: transparent;
+}
