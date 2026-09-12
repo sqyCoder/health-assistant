@@ -5,6 +5,20 @@
 > 个人全栈项目：Java 17 + Spring Boot 3.5 + Vue 3 + Supabase(PostgreSQL/Storage) + DeepSeek。
 > 后端约 60 个类、前端 40+ 自研组件、25 张表、71 项体检指标字典、67 个单元测试。
 
+## 界面预览
+
+![健康问答](docs/images/chat.png)
+
+**健康问答**：SSE 流式回答，自动引用该成员的档案、用药与异常指标
+
+![运动记录](docs/images/exercise.png)
+
+**运动记录**：统计环 + 年度热力图 + 训练卡片流
+
+![数据分析](docs/images/charts.png)
+
+**数据分析**：指标趋势 / 运动趋势 / 类型分布 / 体征趋势（双主题）
+
 ## 功能一览
 
 | 模块 | 能力 |
@@ -18,29 +32,6 @@
 | 运动记录 | 日常活动（步数/睡眠/体重/血压/血糖）+ 训练记录，年度热力图与统计环 |
 | 数据图表 | 指标趋势、运动趋势、类型分布、体征趋势（ECharts，双主题） |
 | 管理后台 | 用户管理、指标字典维护、Prompt 版本管理、AI 调用日志与费用统计、任务队列 |
-
-## 界面预览
-
-<table>
-  <tr>
-    <td width="50%" align="center">
-      <img src="docs/images/chat.png" alt="健康问答" /><br/>
-      <sub>健康问答：流式回答，自动引用该成员档案、用药与异常指标</sub>
-    </td>
-    <td width="50%" align="center">
-      <img src="docs/images/exercise.png" alt="运动记录" /><br/>
-      <sub>运动记录：统计环 + 年度热力图 + 训练卡片流</sub>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center">
-      <img src="docs/images/charts.png" alt="数据分析" /><br/>
-      <sub>数据分析：指标趋势 / 运动趋势 / 类型分布 / 体征趋势（双主题）</sub>
-    </td>
-  </tr>
-</table>
-
-其他界面亮点：登录页极光粒子 + 打字机、首页 Bento 网格仪表盘与健康分环、报告详情指标区间定位条、AI 解读卡片错峰入场；全站支持深色模式（圆形揭示动效）、Ctrl+K 命令面板与移动端底部导航。
 
 ## 技术栈
 
